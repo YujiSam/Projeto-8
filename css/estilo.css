@@ -33,7 +33,7 @@ nav ul li:hover ul{
     visibility: visible;
 }
 nav a:hover{
-    background: bisque;
+    background: gold;
     color: black;
 }
 nav ul ul li{
@@ -59,4 +59,36 @@ label[for="bt-menu"]{
 section{
     width: 100%;
     height: 100vh;
+}
+/*RESPONSIVIDADE MOBILE - DROPDOWN LIST*/
+@media (max-width:800px){
+
+    nav ul li{
+        width: 100%;
+        float: none;
+    }
+    nav ul ul{
+        position: static;
+        overflow: hidden;
+        max-height: 0;
+        transition: all 0.5s;
+    }
+    nav ul li:hover ul{
+        height: auto;
+        max-height: 200px;
+    }
+    #bt-menu{
+        display: none;
+    }
+    label[for="bt-menu"]{
+        display: block;
+    }
+    #bt-menu:checked ~ nav{
+        margin-left: 0;
+    }
+    nav{
+        margin-top: 5px;
+        margin-left: -100%;
+        transition: all 0.5s;
+    }
 }
